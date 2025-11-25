@@ -1,0 +1,31 @@
+version: 2
+
+run:
+  timeout: 3m
+  tests: true
+
+linters:
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - ineffassign
+    - revive
+    - unused
+
+  settings:
+    revive:
+      enable-all-rules: false
+      rules:
+        - name: var-naming
+        - name: early-return
+        - name: empty-lines
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
